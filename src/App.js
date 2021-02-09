@@ -17,15 +17,20 @@ const StyledProject = styled.div`
         margin: 10px;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
     }
+    & > p {
+        margin: 25px 0;
+    }
     & .background-img {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         z-index: -2;
-        transform: scale(1.1);
-        filter: blur(100px) saturate(3);
-        opacity: 0.4;
+        transform: scale(1.5);
+        transform-origin: center;
+        filter: blur(50px) saturate(5) contrast(0.5);
+        -webkit-filter: blur(50px) saturate(5) contrast(0.5);
+        opacity: 0.3;
     }
     & .gradient {
         position: absolute;
@@ -34,12 +39,9 @@ const StyledProject = styled.div`
         bottom: 0;
         right: 0;
         z-index: -1;
-        background-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0) 20%,
-            rgba(0, 0, 0, 0) 80%,
-            rgba(0, 0, 0, 1) 100%
+        background-image: radial-gradient(
+            rgba(0, 0, 0, 0) 40%,
+            rgba(0, 0, 0, 0.5) 100%
         );
     }
 `;
