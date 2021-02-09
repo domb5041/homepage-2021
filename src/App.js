@@ -28,8 +28,6 @@ const StyledProject = styled.div`
         z-index: -2;
         transform: scale(1.5);
         transform-origin: center;
-        filter: blur(50px) saturate(5) contrast(0.5);
-        -webkit-filter: blur(50px) saturate(5) contrast(0.5);
         opacity: 0.3;
     }
     & .gradient {
@@ -40,8 +38,8 @@ const StyledProject = styled.div`
         right: 0;
         z-index: -1;
         background-image: radial-gradient(
-            rgba(0, 0, 0, 0) 40%,
-            rgba(0, 0, 0, 0.5) 100%
+            rgba(0, 0, 0, 0) 20%,
+            rgba(0, 0, 0, 1) 60%
         );
     }
 `;
