@@ -35,41 +35,19 @@ const StyledProject = styled.div`
 `;
 
 const StyledLinks = styled.div`
-    display: flex;
-    width: 300px;
-    margin: 25px 0;
-    z-index: 10;
+    margin: 25px;
     & a {
-        flex: 1;
         text-transform: uppercase;
         color: ${props => props.color};
-        border: 2px solid ${props => props.color};
-        padding: 6px 14px;
-        border-radius: 8px;
-        display: inline-block;
-        text-align: center;
         cursor: pointer;
         transition: 0.1s;
         font-weight: bold;
+        margin: 0 10px;
         text-decoration: none;
-
-        &:first-of-type {
-            border-right: 1px solid ${props => props.color};
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            &:hover {
-                color: white;
-                border-color: white;
-            }
-        }
-        &:last-of-type {
-            border-left: 1px solid ${props => props.color};
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            &:hover {
-                color: white;
-                border-color: white;
-            }
+        border-bottom: 2px solid ${props => props.color};
+        &:hover {
+            color: white;
+            border-color: white;
         }
     }
 `;
@@ -95,12 +73,6 @@ const StyledBackground = styled.div`
         z-index: -1;
         background-image: radial-gradient(transparent, black);
     }
-`;
-
-const StyledCVL = styled.div`
-    position: fixed;
-    top: 10px;
-    right: 10px;
 `;
 
 const StyledControls = styled.div`
@@ -216,18 +188,6 @@ function App() {
                 <div className='background-img' />
                 <div className='gradient'></div>
             </StyledBackground>
-            {/* <StyledCVL>
-                <StyledLink href='/' color={color} target='_blank'>
-                    CV
-                </StyledLink>
-                <StyledLink
-                    href='https://www.linkedin.com/in/dominic-butler-816b31119/'
-                    color={color}
-                    target='_blank'
-                >
-                    Linkedin
-                </StyledLink>
-            </StyledCVL> */}
             <StyledControls color={color}>
                 <button
                     disabled={slide <= 0}
