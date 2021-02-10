@@ -50,7 +50,8 @@ const StyledLink = styled.a`
     font-weight: bold;
     text-decoration: none;
     &:hover {
-        transform: scale(1.05);
+        color: white;
+        border: 2px solid white;
     }
 `;
 
@@ -83,10 +84,11 @@ const StyledControls = styled.div`
     left: 50%;
     z-index: 10;
     transform: translateX(-50%);
+    transition: 0.3s;
     & button {
         background: transparent;
-        color: white;
-        border: 2px solid white;
+        color: ${props => props.color};
+        border: 2px solid ${props => props.color};
         outline: none;
         font-size: 35px;
         margin: 0 5px;
@@ -99,7 +101,8 @@ const StyledControls = styled.div`
             cursor: default;
         }
         &:not(:disabled):hover {
-            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid white;
         }
     }
 `;
@@ -122,9 +125,7 @@ function App() {
     //     });
     // }, []);
 
-    useEffect(() => {
-        setColor(projects[slide].color);
-    }, [slide]);
+    useEffect(() => setColor(projects[slide].color), [slide]);
 
     return (
         <>
@@ -184,7 +185,7 @@ function App() {
                 <div className='background-img' />
                 <div className='gradient'></div>
             </StyledBackground>
-            <StyledControls>
+            <StyledControls color={color}>
                 <button
                     disabled={slide <= 0}
                     onClick={() => setSlide(slide - 1)}
