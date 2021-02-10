@@ -1,41 +1,39 @@
 export default [
     {
-        id: 'p0',
-        url: { cv: '/', linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119/' },
-        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
-        image: 'IMG_2091.jpeg',
-        color: '#DFB298',
+        url: {
+            cv: '/',
+            linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119/',
+        },
+        text:
+            "Welcome to my portfolio! These independant projects aim to highlight the best of my industry experience. Use the arrow keys to look around.",
+        image: 'dom.jpg',
+        color: '#FFD399',
     },
     {
-        id: 'p1',
         url: {
-            project:
-                'https://www.youtube.com/watch?v=JChDbIOkE58&list=PLrRbyFPS5q6w8wLmKAudLnPg1L7CMv1Lw',
+            project: 'https://doms-desktop.herokuapp.com',
+            code: 'https://github.com/domb5041/doms-desktop',
+        },
+        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
+        image: 'desktop.jpg',
+        color: '#D1FFFD',
+    },
+    {
+        url: {
+            project: 'https://dashboard.heroku.com/apps/planet-scale',
+            code: 'https://github.com/domb5041/planetscale',
         },
         text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
         image: 'planets.jpg',
-        color: '#9FC3D9',
+        color: '#90FFEC',
     },
     {
-        id: 'p2',
         url: {
             project:
                 'https://www.youtube.com/watch?v=JChDbIOkE58&list=PLrRbyFPS5q6w8wLmKAudLnPg1L7CMv1Lw',
-            code: '/',
         },
         text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
         image: 'notecircle.jpg',
-        color: '#E0889D',
-    },
-    {
-        id: 'p3',
-        url: {
-            project:
-                'https://www.youtube.com/watch?v=JChDbIOkE58&list=PLrRbyFPS5q6w8wLmKAudLnPg1L7CMv1Lw',
-            code: '/',
-        },
-        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
-        image: 'colourPalette.png',
-        color: '#F2AB47',
+        color: '#FF97B2',
     },
 ];

@@ -23,34 +23,54 @@ const StyledProject = styled.div`
     & .thumbnail-img {
         width: 300px;
         border-radius: 20px;
-        margin: 10px;
         box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
     }
     & > p {
-        margin: 25px 20px;
+        margin: 0 20px;
         color: ${props => props.color};
         font-size: 18px;
         text-align: center;
+        max-width: 500px;
     }
 `;
 
-const StyledLink = styled.a`
-    text-transform: uppercase;
-    margin: 0 5px;
-    color: ${props => props.color};
-    border: 2px solid ${props => props.color};
-    padding: 6px 14px;
-    border-radius: 8px;
-    min-width: 50px;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.1s;
-    font-weight: bold;
-    text-decoration: none;
-    &:hover {
-        color: white;
-        border: 2px solid white;
+const StyledLinks = styled.div`
+    display: flex;
+    width: 300px;
+    margin: 25px 0;
+    z-index: 10;
+    & a {
+        flex: 1;
+        text-transform: uppercase;
+        color: ${props => props.color};
+        border: 2px solid ${props => props.color};
+        padding: 6px 14px;
+        border-radius: 8px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.1s;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:first-of-type {
+            border-right: 1px solid ${props => props.color};
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            &:hover {
+                color: white;
+                border-color: white;
+            }
+        }
+        &:last-of-type {
+            border-left: 1px solid ${props => props.color};
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            &:hover {
+                color: white;
+                border-color: white;
+            }
+        }
     }
 `;
 
@@ -77,6 +97,12 @@ const StyledBackground = styled.div`
     }
 `;
 
+const StyledCVL = styled.div`
+    position: fixed;
+    top: 10px;
+    right: 10px;
+`;
+
 const StyledControls = styled.div`
     position: fixed;
     bottom: 20px;
@@ -94,7 +120,6 @@ const StyledControls = styled.div`
         border: 2px solid ${props => props.color};
         outline: none;
         font-size: 20px;
-        margin: 0 5px;
         width: 50px;
         height: 50px;
         border-radius: 10px;
@@ -145,44 +170,45 @@ function App() {
                             className='thumbnail-img'
                             src={'/images/' + p.image}
                         />
-                        <p>{p.text}</p>
-                        {i === 0 ? (
-                            <div>
-                                <StyledLink
-                                    href={p.url.cv}
+                        <StyledLinks color={p.color}>
+                            {p.url.cv && (
+                                <a
                                     color={p.color}
+                                    href={p.url.cv}
                                     target='_blank'
                                 >
                                     CV
-                                </StyledLink>
-                                <StyledLink
-                                    href={p.url.linkedin}
+                                </a>
+                            )}
+                            {p.url.linkedin && (
+                                <a
                                     color={p.color}
+                                    href={p.url.linkedin}
                                     target='_blank'
                                 >
                                     Linkedin
-                                </StyledLink>
-                            </div>
-                        ) : (
-                            <div>
-                                <StyledLink
+                                </a>
+                            )}
+                            {p.url.code && (
+                                <a
                                     color={p.color}
                                     href={p.url.project}
                                     target='_blank'
                                 >
                                     Open Project
-                                </StyledLink>
-                                {p.url.code && (
-                                    <StyledLink
-                                        color={p.color}
-                                        href={p.url.code}
-                                        target='_blank'
-                                    >
-                                        Source Code
-                                    </StyledLink>
-                                )}
-                            </div>
-                        )}
+                                </a>
+                            )}
+                            {p.url.code && (
+                                <a
+                                    color={p.color}
+                                    href={p.url.code}
+                                    target='_blank'
+                                >
+                                    Source Code
+                                </a>
+                            )}
+                        </StyledLinks>
+                        <p>{p.text}</p>
                     </StyledProject>
                 ))}
             </StyledProjects>
@@ -190,6 +216,18 @@ function App() {
                 <div className='background-img' />
                 <div className='gradient'></div>
             </StyledBackground>
+            {/* <StyledCVL>
+                <StyledLink href='/' color={color} target='_blank'>
+                    CV
+                </StyledLink>
+                <StyledLink
+                    href='https://www.linkedin.com/in/dominic-butler-816b31119/'
+                    color={color}
+                    target='_blank'
+                >
+                    Linkedin
+                </StyledLink>
+            </StyledCVL> */}
             <StyledControls color={color}>
                 <button
                     disabled={slide <= 0}
