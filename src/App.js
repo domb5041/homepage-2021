@@ -65,7 +65,7 @@ const StyledBackground = styled.div`
         z-index: -2;
         opacity: 0.4;
         background-color: ${props => props.color};
-        transition: 1.5s;
+        transition: 2s;
     }
     & .gradient {
         position: absolute;
@@ -80,9 +80,9 @@ const StyledBackground = styled.div`
 
 const StyledControls = styled.div`
     position: fixed;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
     z-index: 10;
     transition: 0.3s;
     display: flex;
@@ -94,12 +94,17 @@ const StyledControls = styled.div`
         color: ${props => props.color};
         border: 2px solid ${props => props.color};
         outline: none;
-        font-size: 35px;
+        font-size: 20px;
         margin: 0 5px;
-        width: 46px;
+        width: 50px;
+        height: 50px;
         border-radius: 10px;
         transition: 0.2s;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
         &:disabled {
             opacity: 0.5;
             cursor: default;
@@ -191,14 +196,16 @@ function App() {
                     disabled={slide <= 0}
                     onClick={() => setSlide(slide - 1)}
                 >
-                    {'<'}
+                    <i className='fas fa-chevron-left'></i>
                 </button>
-                <div>{slide + 1}/{projects.length}</div>
+                <div>
+                    {slide + 1}/{projects.length}
+                </div>
                 <button
                     disabled={slide >= projects.length - 1}
                     onClick={() => setSlide(slide + 1)}
                 >
-                    {'>'}
+                    <i className='fas fa-chevron-right'></i>
                 </button>
             </StyledControls>
         </>
