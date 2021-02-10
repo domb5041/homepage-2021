@@ -81,10 +81,14 @@ const StyledBackground = styled.div`
 const StyledControls = styled.div`
     position: fixed;
     bottom: 10px;
-    left: 50%;
+    left: 10px;
+    right: 10px;
     z-index: 10;
-    transform: translateX(-50%);
     transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: ${props => props.color};
     & button {
         background: transparent;
         color: ${props => props.color};
@@ -111,19 +115,16 @@ function App() {
     const [slide, setSlide] = useState(0);
     const [color, setColor] = useState(projects[0].color);
 
-    // useEffect(() => {
-    //     let newSlide = slide;
-    //     document.addEventListener('keydown', function (e) {
-    //         switch (e.keyCode) {
-    //             case 37:
-    //                 setSlide(newSlide--);
-    //                 break;
-    //             case 39:
-    //                 setSlide(newSlide++);
-    //                 break;
-    //         }
-    //     });
-    // }, []);
+    useEffect(() => {
+        function onKeyup(e) {
+            let s = slide;
+            if (e.key === 'ArrowRight' && slide < projects.length - 1)
+                setSlide(s + 1);
+            if (e.key === 'ArrowLeft' && slide > 0) setSlide(s - 1);
+        }
+        window.addEventListener('keyup', onKeyup);
+        return () => window.removeEventListener('keyup', onKeyup);
+    }, [slide]);
 
     useEffect(() => setColor(projects[slide].color), [slide]);
 
@@ -192,6 +193,7 @@ function App() {
                 >
                     {'<'}
                 </button>
+                <div>{slide + 1}/{projects.length}</div>
                 <button
                     disabled={slide >= projects.length - 1}
                     onClick={() => setSlide(slide + 1)}
