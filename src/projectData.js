@@ -5,7 +5,7 @@ export default [
             linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119/',
         },
         text:
-            "Welcome to my portfolio! These independant projects aim to highlight the best of my industry experience. Use the arrow keys to look around.",
+            "Welcome to my portfolio! These independant projects highlight the best of my industry experience. Use the arrow keys to look around.",
         image: 'dom.jpg',
         color: '#FFD399',
     },

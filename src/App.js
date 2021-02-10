@@ -18,9 +18,15 @@ const StyledProject = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-height: 700px) {
+        justify-content: flex-start;
+    }
     flex-direction: column;
     color: white;
     & .thumbnail-img {
+        @media (max-height: 700px) {
+            margin-top: 30px;
+        }
         width: 300px;
         border-radius: 20px;
         box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
