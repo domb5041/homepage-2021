@@ -27,32 +27,11 @@ const StyledProject = styled.div`
         box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
     }
     & > p {
-        margin: 25px 0;
+        margin: 25px 20px;
         color: ${props => props.color};
         font-size: 18px;
         font-weight: bold;
-    }
-    & .background-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -2;
-        opacity: 0.4;
-        background-color: ${props => props.color};
-    }
-    & .gradient {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        background-image: radial-gradient(
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 1) 70%
-        );
+        text-align: center;
     }
 `;
 
@@ -72,6 +51,29 @@ const StyledLink = styled.a`
     text-decoration: none;
     &:hover {
         transform: scale(1.05);
+    }
+`;
+
+const StyledBackground = styled.div`
+    & .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -2;
+        opacity: 0.4;
+        background-color: ${props => props.color};
+        transition: 1.5s;
+    }
+    & .gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-image: radial-gradient(transparent, black);
     }
 `;
 
@@ -104,6 +106,7 @@ const StyledControls = styled.div`
 
 function App() {
     const [slide, setSlide] = useState(0);
+    const [color, setColor] = useState(projects[0].color);
 
     // useEffect(() => {
     //     let newSlide = slide;
@@ -119,6 +122,10 @@ function App() {
     //     });
     // }, []);
 
+    useEffect(() => {
+        setColor(projects[slide].color);
+    }, [slide]);
+
     return (
         <>
             <StyledProjects
@@ -128,8 +135,6 @@ function App() {
             >
                 {projects.map((p, i) => (
                     <StyledProject color={p.color}>
-                        <div className='background-img' />
-                        <div className='gradient'></div>
                         <img
                             className='thumbnail-img'
                             src={'/images/' + p.image}
@@ -175,6 +180,10 @@ function App() {
                     </StyledProject>
                 ))}
             </StyledProjects>
+            <StyledBackground color={color}>
+                <div className='background-img' />
+                <div className='gradient'></div>
+            </StyledBackground>
             <StyledControls>
                 <button
                     disabled={slide <= 0}
