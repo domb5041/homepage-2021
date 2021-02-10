@@ -30,7 +30,6 @@ const StyledProject = styled.div`
         margin: 25px 20px;
         color: ${props => props.color};
         font-size: 18px;
-        font-weight: bold;
         text-align: center;
     }
 `;
@@ -40,8 +39,8 @@ const StyledLink = styled.a`
     margin: 0 5px;
     color: ${props => props.color};
     border: 2px solid ${props => props.color};
-    padding: 7px 14px;
-    border-radius: 20px;
+    padding: 6px 14px;
+    border-radius: 8px;
     min-width: 50px;
     display: inline-block;
     text-align: center;
