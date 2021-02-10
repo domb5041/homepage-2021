@@ -18,13 +18,13 @@ const StyledProject = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-height: 700px) {
+    @media (max-height: 800px) {
         justify-content: flex-start;
     }
     flex-direction: column;
     color: white;
     & .thumbnail-img {
-        @media (max-height: 700px) {
+        @media (max-height: 800px) {
             margin-top: 30px;
         }
         width: 300px;
