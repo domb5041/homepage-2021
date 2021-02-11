@@ -179,15 +179,6 @@ function App() {
                                     Linkedin
                                 </a>
                             )}
-                            {p.url.instagram && (
-                                <a
-                                    color={p.color}
-                                    href={p.url.instagram}
-                                    target='_blank'
-                                >
-                                    Instagram
-                                </a>
-                            )}
                             {p.url.project && (
                                 <a
                                     color={p.color}
