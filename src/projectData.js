@@ -3,6 +3,7 @@ export default [
         url: {
             cv: '/Dominic-Butler-CV.pdf',
             linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119',
+            instagram: 'https://www.instagram.com/dombutlerpad/'
         },
         text:
             "Welcome! These independant projects set out to demonstrate the best of my industry experience. Use the arrow keys to look around.",
