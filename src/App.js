@@ -25,9 +25,12 @@ const StyledProject = styled.div`
     color: white;
     & .thumbnail-img {
         @media (max-height: 800px) {
-            margin-top: 30px;
+            margin-top: 40px;
         }
         width: 300px;
+        @media (max-height: 600px) {
+            width: 150px;
+        }
         border-radius: 20px;
         box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
     }
@@ -59,7 +62,7 @@ const StyledLinks = styled.div`
 `;
 
 const StyledBackground = styled.div`
-    & .background-img {
+    & .background-glow {
         position: absolute;
         top: 0;
         left: 0;
@@ -70,7 +73,7 @@ const StyledBackground = styled.div`
         background-color: ${props => props.color};
         transition: 2s;
     }
-    & .gradient {
+    & .background-shadow {
         position: absolute;
         top: 0;
         left: 0;
@@ -78,6 +81,9 @@ const StyledBackground = styled.div`
         right: 0;
         z-index: -1;
         background-image: radial-gradient(transparent, black);
+        @media (max-height: 800px) {
+            background-image: linear-gradient(to bottom, transparent, black);
+        }
     }
 `;
 
@@ -123,17 +129,23 @@ function App() {
     const [color, setColor] = useState(projects[0].color);
 
     useEffect(() => {
-        function onKeyup(e) {
+        const changeSlide = e => {
             let s = slide;
             if (e.key === 'ArrowRight' && slide < projects.length - 1)
                 setSlide(s + 1);
             if (e.key === 'ArrowLeft' && slide > 0) setSlide(s - 1);
-        }
-        window.addEventListener('keyup', onKeyup);
-        return () => window.removeEventListener('keyup', onKeyup);
-    }, [slide]);
+        };
+        const resetSlide = () => setSlide(0);
 
-    useEffect(() => setColor(projects[slide].color), [slide]);
+        window.addEventListener('keyup', changeSlide);
+        window.addEventListener('resize', resetSlide);
+        setColor(projects[slide].color);
+
+        return () => {
+            window.removeEventListener('keyup', changeSlide);
+            window.removeEventListener('resize', resetSlide);
+        };
+    }, [slide]);
 
     return (
         <>
@@ -143,7 +155,7 @@ function App() {
                 }}
             >
                 {projects.map((p, i) => (
-                    <StyledProject color={p.color}>
+                    <StyledProject color={p.color} key={i}>
                         <img
                             className='thumbnail-img'
                             src={'/images/' + p.image}
@@ -191,8 +203,8 @@ function App() {
                 ))}
             </StyledProjects>
             <StyledBackground color={color}>
-                <div className='background-img' />
-                <div className='gradient'></div>
+                <div className='background-glow' />
+                <div className='background-shadow' />
             </StyledBackground>
             <StyledControls color={color}>
                 <button
