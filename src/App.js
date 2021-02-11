@@ -167,7 +167,7 @@ function App() {
                                     Linkedin
                                 </a>
                             )}
-                            {p.url.code && (
+                            {p.url.project && (
                                 <a
                                     color={p.color}
                                     href={p.url.project}

@@ -1,11 +1,11 @@
 export default [
     {
         url: {
-            cv: '/',
+            cv: '/Dominic-Butler-CV.pdf',
             linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119/',
         },
         text:
-            "Welcome to my portfolio! These independant projects highlight the best of my industry experience. Use the arrow keys to look around.",
+            "Welcome! These independant projects set out to demonstrate the best of my industry experience. Use the arrow keys to look around.",
         image: 'dom.jpg',
         color: '#FFD399',
     },
@@ -14,16 +14,16 @@ export default [
             project: 'https://doms-desktop.herokuapp.com',
             code: 'https://github.com/domb5041/doms-desktop',
         },
-        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
+        text: 'A replica mac desktop. It works just like the real thing. Interact with folders, windows, the menu bar and more.',
         image: 'desktop.jpg',
         color: '#D1FFFD',
     },
     {
         url: {
-            project: 'https://dashboard.heroku.com/apps/planet-scale',
+            project: 'https://planet-scale.herokuapp.com',
             code: 'https://github.com/domb5041/planetscale',
         },
-        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
+        text: 'Zoom through a scale model of the planets in our solar system.',
         image: 'planets.jpg',
         color: '#90FFEC',
     },
@@ -32,7 +32,7 @@ export default [
             project:
                 'https://www.youtube.com/watch?v=JChDbIOkE58&list=PLrRbyFPS5q6w8wLmKAudLnPg1L7CMv1Lw',
         },
-        text: 'lskadjhl askjdfhla skdfjha lskdjfh alksjdfh askljdhf ',
+        text: 'I explain some music theory in a two-part animated video series. Inspired by the illustrations and presentation of Youtube channel Kurzgesagt.',
         image: 'notecircle.jpg',
         color: '#FF97B2',
     },
