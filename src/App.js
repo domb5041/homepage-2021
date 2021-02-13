@@ -101,7 +101,7 @@ const StyledControls = styled.div`
     color: ${props => props.color};
     & div {
         @media (max-width: 500px) {
-            max-width: 150px;
+            max-width: 180px;
         }
         text-align: center;
     }
@@ -222,7 +222,7 @@ function App() {
                 </button>
                 <div>
                     {slide === 0 ? (
-                        'USE THE ARROW KEYS TO BEGIN'
+                        'HIT THE RIGHT ARROW-KEY TO BEGIN'
                     ) : (
                         <>
                             {slide}/{projects.length - 1}
