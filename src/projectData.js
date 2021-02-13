@@ -5,7 +5,7 @@ export default [
             linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119',
         },
         text:
-            "Welcome! These independant projects set out to demonstrate the best of my industry experience. Use the arrow keys to look around.",
+            'Welcome! The following independant projects demonstrate what I can do, and want to do more of. Find out more about me and my industry experience above.',
         image: 'dom.jpg',
         color: '#FFD399',
     },
@@ -14,7 +14,8 @@ export default [
             project: 'https://doms-desktop.herokuapp.com',
             code: 'https://github.com/domb5041/doms-desktop',
         },
-        text: 'A replica mac desktop. It works just like the real thing. Interact with folders, windows, the menu bar and more.',
+        text:
+            'A replica mac desktop. It works just like the real thing. Interact with folders, windows, the menu bar and more.',
         image: 'desktop.jpg',
         color: '#D1FFFD',
     },
@@ -32,7 +33,8 @@ export default [
             project:
                 'https://www.youtube.com/watch?v=JChDbIOkE58&list=PLrRbyFPS5q6w8wLmKAudLnPg1L7CMv1Lw',
         },
-        text: 'I explain some music theory in a two-part animated video series. Inspired by the illustrations and presentation of Youtube channel Kurzgesagt.',
+        text:
+            'I explain some music theory in a two-part animated video series. Inspired by the illustrations and presentation of Youtube channel Kurzgesagt.',
         image: 'notecircle.jpg',
         color: '#FF97B2',
     },

@@ -214,7 +214,13 @@ function App() {
                     <i className='fas fa-chevron-left'></i>
                 </button>
                 <div>
-                    {slide + 1}/{projects.length}
+                    {slide === 0 ? (
+                        'USE THE ARROW KEYS TO BEGIN'
+                    ) : (
+                        <>
+                            {slide}/{projects.length - 1}
+                        </>
+                    )}
                 </div>
                 <button
                     disabled={slide >= projects.length - 1}
