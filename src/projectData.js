@@ -5,7 +5,7 @@ export default [
             linkedin: 'https://www.linkedin.com/in/dominic-butler-816b31119',
         },
         text:
-            'Welcome! The following independant projects demonstrate what I can do, and want to do more of. Find out more about me and my industry experience above.',
+            'Welcome! The following independant projects demonstrate my skill set, and the kind of work I get excited about. Find out more about me and my industry experience above.',
         image: 'dom.jpg',
         color: '#FFD399',
     },
