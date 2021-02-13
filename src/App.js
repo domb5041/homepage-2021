@@ -30,6 +30,7 @@ const StyledProject = styled.div`
         width: 300px;
         @media (max-height: 600px) {
             width: 150px;
+            margin-top: 20px;
         }
         border-radius: 20px;
         box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
@@ -98,6 +99,12 @@ const StyledControls = styled.div`
     justify-content: space-between;
     align-items: center;
     color: ${props => props.color};
+    & div {
+        @media (max-width: 500px) {
+            max-width: 150px;
+        }
+        text-align: center;
+    }
     & button {
         background: transparent;
         color: ${props => props.color};
