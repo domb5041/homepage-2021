@@ -192,7 +192,7 @@ function App() {
                                     href={p.url.instagram}
                                     target='_blank'
                                 >
-                                    Linkedin
+                                    Instagram
                                 </a>
                             )}
                             {p.url.project && (
