@@ -6,7 +6,7 @@ export default [
             instagram: 'https://www.instagram.com/dombutlerpad/',
         },
         text:
-            'Welcome! The following independant projects demonstrate my skill set, and the kind of work I love. Find out more about me and my industry experience above.',
+            'Welcome! In the following independant projects I explore themes, technologies and ideas that excit me. Find out more about me and my industry experience above.',
         image: 'dom.jpg',
         color: '#FFD399',
     },
