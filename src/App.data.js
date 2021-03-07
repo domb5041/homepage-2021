@@ -12,6 +12,15 @@ export default [
     },
     {
         url: {
+            project: 'https://chain-that-clocks.herokuapp.com',
+            code: 'https://github.com/domb5041/chain-that-clocks',
+        },
+        text: 'A world clock built entirely with html elements, CSS and React.',
+        image: 'clock.jpg',
+        color: '#F96965',
+    },
+    {
+        url: {
             project: 'https://doms-desktop.herokuapp.com',
             code: 'https://github.com/domb5041/doms-desktop',
         },
@@ -19,15 +28,6 @@ export default [
             'A replica mac desktop. It works just like the real thing. Interact with folders, windows, the menu bar and more.',
         image: 'desktop.jpg',
         color: '#D1FFFD',
-    },
-    {
-        url: {
-            project: 'https://planet-scale.herokuapp.com',
-            code: 'https://github.com/domb5041/planetscale',
-        },
-        text: 'Zoom through a scale model of the planets in our solar system.',
-        image: 'planets.jpg',
-        color: '#90FFEC',
     },
     {
         url: {
