@@ -39,7 +39,7 @@ export default function App() {
                             src={'/images/' + p.image}
                         />
                         <styled.Links color={p.color}>
-                            {p.url.cv && (
+                            {/* {p.url.cv && (
                                 <a
                                     color={p.color}
                                     href={p.url.cv}
@@ -47,7 +47,7 @@ export default function App() {
                                 >
                                     CV
                                 </a>
-                            )}
+                            )} */}
                             {p.url.linkedin && (
                                 <a
                                     color={p.color}
